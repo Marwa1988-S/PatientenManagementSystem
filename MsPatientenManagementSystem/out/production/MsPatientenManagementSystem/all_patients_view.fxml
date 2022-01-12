@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.msaada.maingui.UiController">
+   <Label fx:id="lblAllPatients">
+      <VBox.margin>
+         <Insets left="20.0" top="10.0" />
+      </VBox.margin></Label>
+   <HBox prefHeight="31.0" prefWidth="580.0">
+      <children>
+         <RadioButton fx:id="rdbshowAll" mnemonicParsing="false" onAction="#showAllPatients" text="Patienten zeigen">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <toggleGroup>
+               <ToggleGroup fx:id="tglGrpAll" />
+            </toggleGroup>
+            <HBox.margin>
+               <Insets />
+            </HBox.margin>
+         </RadioButton>
+         <RadioButton fx:id="rdbshowByName" mnemonicParsing="false" onAction="#switchComponentVisibility" text="Suchen mit der Name">
+            <font>
+               <Font size="14.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin>
+            <toggleGroup>
+               <!--Alle weitere RadioButtons
+               bekommen ein refernec auf die ToggleGroup ohne e
+               im ersten Button
+               -->
+               <fx:reference source="tglGrpAll" />
+            </toggleGroup>
+         </RadioButton>
+      </children>
+      <VBox.margin>
+         <Insets left="20.0" top="20.0" />
+      </VBox.margin>
+   </HBox>
+   <Label fx:id="lblUserMsg">
+      <VBox.margin>
+         <Insets left="20.0" />
+      </VBox.margin>
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <HBox fx:id="hbPatientName" prefHeight="44.0" prefWidth="580.0" visible="false">
+      <children>
+         <TextField fx:id="txtPatientFName" promptText="Patient Vorname">
+            <HBox.margin>
+               <Insets right="15.0" />
+            </HBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font>
+         </TextField>
+         <TextField fx:id="txtPatientLName" promptText="Patient Nachname">
+            <font>
+               <Font size="14.0" />
+            </font></TextField>
+         <Button fx:id="btnGetPatient" mnemonicParsing="false" onAction="#showPatientDataByName" prefWidth="75.0" text="Button">
+            <HBox.margin>
+               <Insets left="15.0" />
+            </HBox.margin></Button>
+      </children>
+      <VBox.margin>
+         <Insets left="20.0" />
+      </VBox.margin>
+   </HBox>
+   <TabPane fx:id="tabPanePatientsData" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+     <tabs>
+       <Tab text="Untitled Tab 1">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                  
+                    
+                      <ListView fx:id="lvAllPatients" editable="true" onMouseClicked="#getListViewItem" prefHeight="168.0" prefWidth="560.0" />
+                  </children>
+               </AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Untitled Tab 2">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <ListView fx:id="lvAllMedicalRecordsOFPatient" prefHeight="170.0" prefWidth="560.0" visible="false" />
+                  </children>
+               </AnchorPane>
+         </content>
+       </Tab>
+     </tabs>
+      <VBox.margin>
+         <Insets left="20.0" right="20.0" />
+      </VBox.margin>
+   </TabPane>
+   <TitledPane fx:id="tpAppointmentsPlan" alignment="CENTER" animated="false" contentDisplay="CENTER" prefHeight="200.0" prefWidth="200.0" text="Appointments plan " textAlignment="CENTER">
+     <content>
+        <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <ListView fx:id="lvAppsPlan" prefHeight="200.0" prefWidth="200.0" />
+            </children></VBox>
+     </content>
+      <VBox.margin>
+         <Insets left="20.0" right="20.0" top="10.0" />
+      </VBox.margin>
+   </TitledPane>
+    <Hyperlink fx:id="hlBack" onAction="#backToDoctorView" text="Back">
+      <VBox.margin>
+         <Insets left="20.0" />
+      </VBox.margin></Hyperlink>
+</VBox>

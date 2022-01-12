@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.msaada.maingui.UiController">
+   <children>
+      <RadioButton mnemonicParsing="false" onAction="#showMyPersonalData" text="Pesronal Daten">
+          <VBox.margin>
+              <Insets top="30.0" />
+          </VBox.margin>
+          <font>
+              <Font size="14.0" />
+          </font>
+          <toggleGroup>
+              <ToggleGroup fx:id="tglGrpAll" />
+          </toggleGroup>
+      </RadioButton>
+
+      <RadioButton mnemonicParsing="false" onAction="#showMyAppointments" text="Termine">
+          <VBox.margin>
+              <Insets bottom="10.0" top="10.0" />
+          </VBox.margin>
+          <font>
+              <Font size="14.0" />
+          </font>
+          <toggleGroup>
+              <fx:reference source="tglGrpAll" />
+          </toggleGroup>
+      </RadioButton>
+      <TabPane fx:id="tabPanePatientsData" prefHeight="292.0" prefWidth="560.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Meine Daten">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="261.0" prefWidth="560.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Vorname           :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblFirstName">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Nachname        :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblLastName">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="30.0" layoutY="155.0" prefHeight="92.0" prefWidth="540.0">
+                                 <children>
+                                    <Label text="Benutzername  :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblUsername">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Strasse              :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblStreet">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="82.0" prefWidth="560.0">
+                                 <children>
+                                    <Label text="Hausnummer   :">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="lblHnumber">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" top="10.0" />
+                           </padding></VBox>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabMyAppointment" text="Meine Termine">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="lvAppsPlan" prefHeight="170.0" prefWidth="600.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </TabPane>
+      <Button mnemonicParsing="false" onAction="#saveAllAppointmentsOfpatientInCsvFile" text="Termine Speichern">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin></Button>
+      <Label fx:id="lblUserMsg">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+      </Label>
+      <Hyperlink onAction="#switchBackToLoggedInScreen" text="Abmelden">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+   </children>
+   <padding>
+      <Insets left="20.0" right="20.0" />
+   </padding>
+</VBox>

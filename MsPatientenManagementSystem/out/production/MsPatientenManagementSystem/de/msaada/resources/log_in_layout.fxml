@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="center" prefHeight="213.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.msaada.maingui.UiController">
+
+    <TextField fx:id="txtUserName" prefWidth="200" promptText="User name">
+      <VBox.margin>
+         <Insets bottom="5.0" left="25.0" right="25.0" />
+      </VBox.margin></TextField>
+    <PasswordField fx:id="txtUserPw" prefWidth="200" promptText="User password">
+      <VBox.margin>
+         <Insets bottom="20.0" left="25.0" right="25.0" />
+      </VBox.margin></PasswordField>
+   <Label fx:id="lblLogin" textFill="#f01e21">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+
+    <Button fx:id="btnLogin" onAction="#login" prefWidth="200" text="Login">
+      <VBox.margin>
+         <Insets bottom="10.0" />
+      </VBox.margin></Button>
+    <Button fx:id="btnRegister" onAction="#register" prefWidth="200" text="Doctor Register" />
+
+
+</VBox>

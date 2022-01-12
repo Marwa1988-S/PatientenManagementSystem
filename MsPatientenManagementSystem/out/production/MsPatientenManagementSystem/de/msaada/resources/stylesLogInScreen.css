@@ -1,0 +1,12 @@
+*{
+    -fx-font-size:14;
+}
+
+Button{
+    -fx-background-color:#cee2ed;
+    -fx-border-color:#8d9091;
+}
+
+Button:hover{
+    -fx-border-color:firebrick;
+}

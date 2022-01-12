@@ -1,0 +1,7 @@
+*{
+    -fx-font-size:28;
+}
+
+Button{
+    -fx-background-color:#cee2ed;
+}
