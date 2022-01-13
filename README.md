@@ -3,7 +3,7 @@ JavaFx Project
 
 Installation
 
-1- git clone https://github.com/Marwa1988-S/PatientenManagementSystem/tree/master.git
+1- git clone https://github.com/Marwa1988-S/PatientenManagementSystem.git
 
 2- emport sql database (db_patient_datenbank_ms)
 
